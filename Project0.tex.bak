@@ -1,0 +1,176 @@
+\ifdefined \issolutions
+
+	\documentclass[answers,10pt]{exam}
+
+\else
+
+	\documentclass[10pt]{exam}
+
+\fi
+
+
+
+\usepackage{graphicx}
+
+\newcommand{\B}[1]{\boldsymbol{#1}}
+
+\newcommand{\R}{\mathbb{R}}
+
+\newcommand{\changes}[1]{{\color{red} #1}}
+
+
+
+\title{MA 402: Project 0}
+
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\textbf{Instructions}: 
+
+
+
+\begin{itemize}
+
+\item Detailed instructions regarding submission and grading are available on the class website\footnote{\url{https://github.ncsu.edu/asaibab/ma402_fall_2019/blob/master/projects.md}}.
+
+\item You may find the textbooks provided on the class website to be useful.
+
+\end{itemize}
+
+
+
+\vspace{2mm}
+
+\section*{Introduce yourself}
+
+\begin{questions} 
+
+\question [5 bonus] Make an appointment to meet with the instructor in his office before September 4. I would prefer if you drop by during office hours, or on Tuesday September 3 (2-5 PM). didnt go
+
+\end{questions}
+
+\section*{Linear Algebra}
+
+\begin{questions} 
+
+\question [10] (Strang) $\B{A}$ is  $3\times 5$, $\B{B}$  is $5 \times 3$, $\B{C}$ is $5\times 1$, and $\B{D}$ is $3\times 1$. All entries are $1$. Which of these  matrix operations are allowed, and what are the results? 
+BA, AB and ABD are allowed since they follow the rules of matrix multiplication. 
+
+\[ \B{BA} \qquad \B{AB} \qquad \B{ABD} \qquad \B{DBA} \qquad \B{A}(\B{B}+\B{C}) .\]
+
+\question [10] Let $\B{u}, \B{v}$ be $n\times 1$ vectors such that $\B{v}^\top \B{u} \neq 1$. Show that $\B{M} = \B{I}-\B{uv}^\top$ is invertible and that $$\B{M}^{-1} = \B{I} + \frac{1}{1-\B{v}^\top \B{u}}\B{uv}^\top.$$
+
+\question [10] This question reviews some properties of symmetric matrices. Let $\B{A}$ be an $n\times n$ real, symmetric matrix.
+
+\begin{parts}
+
+\part Show that the eigenvalues of a symmetric matrix are real. 
+
+\part Show that eigenvectors corresponding to distinct eigenvalues $\lambda$ and $\mu$ are orthogonal. 
+
+\part Find the eigenvalue decomposition of $\B{B} = \bmat{3 & 1 \\ 1 & 3}.$ That is, find an orthogonal matrix $\B{Q}$ and diagonal matrix $\B\Lambda$ such that $\B{B} = \B{Q\Lambda Q}^\top$. 
+
+\end{parts}
+
+\end{questions}
+
+\section*{Probability}
+
+\begin{questions} 
+
+\question [10] Random variables
+
+\begin{parts}
+
+\part Let $X$ be the double exponential random variable, which has the probability density function (pdf))
+
+\[ f(x) = e^{-2|x|} = \left\{ \begin{array}{ll} e^{2x} & -\infty < x < 0 \\ e^{-2x} & 0 \leq x <\infty  \end{array}\right. .\]
+
+ Derive the cumulative distribution function $F(x)$.
+
+
+
+\part Let $X$ have the pdf $f_X$. Find the pdf of the random variable $Y$ defined by $Y = aX + b$, where $a \neq 0$ and $b$ are scalars. 
+
+\end{parts}
+
+\question [10] Perhaps the most important multivariate distribution is the multivariate normal distribution. Here, we consider the special case of bivariate normal distribution. We say that $X,Y$ have a bivariate normal distribution if their joint density is given by 
+
+\[ f(x,y) = \frac{1}{2\pi\sigma_x\sigma_y \sqrt{1-\rho^2}}\exp\left( -\frac{1}{2(1-\rho^2)}\left[\bar{x}^2 + \bar{y}^2 - 2\rho\bar{x}\bar{y}  \right]\right) \qquad -\infty < x,y < \infty, \]
+
+where $\bar{x} = \frac{x-\mu_x}{\sigma_x}$ and $\bar{y}= \frac{y-\mu_y}{\sigma_y}$.
+
+ 
+
+\begin{parts}
+
+\part Show that the marginal distribution of $X$ is Normal with mean $\mu_x$ and variance $\sigma_x^2$.
+
+\part Show that $\rho = 0$ if and only if $X$ and $Y$ are independent.  Write down the joint density for this case. 
+
+\end{parts}
+
+ 
+
+\end{questions}
+
+\section*{Programming}
+
+
+
+\begin{questions} 
+
+\question [10]  After studying a certain type of cancer, a researcher hypothesizes that in the short run the number $(y)$ of malignant cells in a particular tissue grows exponentially with time $(t)$. That is, $y=\alpha_0 e^{\alpha_1 t}$.  The researcher records the data given below
+
+\begin{center}
+
+\begin{tabular}{c|ccccc}
+
+t (days) & $1$ & $2$ & $3$ & $4$ & $5$ \\ \hline
+
+y (cells) & $16$ & $27$ & $45$ & $74$ & $122$
+
+\end{tabular}
+
+\end{center}
+
+With some analysis (that we will learn later this semester), we find the coefficients of ``best'' fit
+
+ \[ \alpha_0 = 9.7309 \qquad \alpha_1 = 0.5071.\] 
+
+\begin{parts}
+
+\part Plot the data points (with black crosses) along with the ``best'' fit curve (as a solid red line).
+
+\part Predict at what time the number of cells reaches $100$. Show this visually using a dashed green line. 
+
+\end{parts}
+
+ You should submit one single plot. It should have the following features:
+
+\begin{itemize}
+
+\item Clearly label the x- and y-axes. All the labels should have fontsize $18$. 
+
+\item Title the figure `Exponential line fit.' This should have fontsize $20$
+
+\item Add a legend with three labels `Data', 'Fit', and 'Prediction'. The fontsize for the labels should be $18$. 
+
+\item All the ticks in the figures should have fontsize $18$.
+
+\item The markersize should be $20$ pts, and the line-widths should be $4$ pts. 
+
+\end{itemize}
+
+\textit{Note}: These are, roughly, my expectations for submitting plots this semester.
+
+
+
+\end{questions}
+
+
+
+\end{document}
